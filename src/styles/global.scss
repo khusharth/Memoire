@@ -1,3 +1,5 @@
+@import "./theme.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +12,8 @@
 }
 
 html {
-    min-height: 100vh;
     box-sizing: border-box;
     font-size: 62.5%;
-
     @media only screen and (max-width: 900px) {
         font-size: 56%;
     }
@@ -24,11 +24,18 @@ body {
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.6;
-    color: #fff;
-    background-image: radial-gradient(#39d6ff 5%, #007e9f);
-    // background: #007e9f;
+    height: 100%;
+    color: #555;
+    @include themify($themes) {
+        background-image: radial-gradient(
+            themed("bgColorSecondary") 5%,
+            themed("bgColorPrimary")
+        );
+    }
+    // background-image: radial-gradient(#39d6ff 5%, #007e9f);
+    // background-image: radial-gradient(#c49e80 5%, #815a3b);
 }
 
-ul {
-    list-style: none;
-}
+// ul {
+//     list-style: none;
+// }

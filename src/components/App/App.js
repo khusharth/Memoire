@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import "../../styles/global.scss";
 import history from "../../history";
 import { Home, Instructions, ChooseTheme, GamePage } from "../../pages";
-import { Header } from "../../components";
+import { Header, Footer, Loader } from "../../components";
 import { ThemeContext } from "../../ThemeContext";
 import useTheme from "../../useTheme";
-import Footer from "../Footer/Footer";
 import imageArray from "../../preloadImages";
 
 const App = () => {
     const [theme, setTheme] = useTheme("blue", "Theme");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const getTheme = localStorage.getItem('Theme');
-        console.log(getTheme);
+        // console.log(getTheme);
         if (getTheme === 'green') {
             setTheme('green');
         } else if (getTheme === 'brown') {
@@ -27,11 +27,18 @@ const App = () => {
     }, []);
 
     const preloadImage = () => {
-        console.log('preloading...')
+        setLoading(true);
         const images = imageArray();
+        let length = images.length;
         images.forEach((picture) => {
             const img = new Image();
             img.src = picture;
+            img.onload = () => {
+                --length;
+                if (length <= 0) {
+                    setLoading(false);
+                }
+            };
         });
     };
 
@@ -40,13 +47,15 @@ const App = () => {
             <div className={`theme-${theme}`}>
                 <ThemeContext.Provider value={{ theme, setTheme }}>
                     <Header />
-                    <Switch>
+                    {(loading) ? (<Loader />) : (
+                        <Switch>
+                            <Route path='/' exact component={Home} />
+                            <Route path='/instructions' component={Instructions} />
+                            <Route path='/theme' component={ChooseTheme} />
+                            <Route path='/game' component={GamePage} />
+                        </Switch>
+                    )}
 
-                        <Route path='/' exact component={Home} />
-                        <Route path='/instructions' component={Instructions} />
-                        <Route path='/theme' component={ChooseTheme} />
-                        <Route path='/game' component={GamePage} />
-                    </Switch>
                     <Footer />
                 </ThemeContext.Provider>
             </div>

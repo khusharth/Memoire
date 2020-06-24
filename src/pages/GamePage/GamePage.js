@@ -126,7 +126,7 @@ const GamePage = () => {
     }, [seconds]);
 
     useEffect(() => {
-        console.log(isRunning);
+        // console.log(isRunning);
         if (isRunning) {
             const id = window.setInterval(
                 () => setSeconds((seconds) => seconds - 1),

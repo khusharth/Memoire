@@ -7,6 +7,7 @@ import { Header } from "../../components";
 import { ThemeContext } from "../../ThemeContext";
 import useTheme from "../../useTheme";
 import Footer from "../Footer/Footer";
+import imageArray from "../../preloadImages";
 
 const App = () => {
     const [theme, setTheme] = useTheme("blue", "Theme");
@@ -21,7 +22,18 @@ const App = () => {
         } else {
             setTheme('blue');
         }
+
+        preloadImage();
     }, []);
+
+    const preloadImage = () => {
+        console.log('preloading...')
+        const images = imageArray();
+        images.forEach((picture) => {
+            const img = new Image();
+            img.src = picture;
+        });
+    };
 
     return (
         <Router history={history}>

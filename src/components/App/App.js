@@ -13,6 +13,8 @@ const App = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        preloadImage();
+
         const getTheme = localStorage.getItem('Theme');
         // console.log(getTheme);
         if (getTheme === 'green') {
@@ -23,7 +25,6 @@ const App = () => {
             setTheme('blue');
         }
 
-        preloadImage();
     }, []);
 
     const preloadImage = () => {

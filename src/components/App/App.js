@@ -6,6 +6,7 @@ import { Home, Instructions, ChooseTheme, GamePage } from "../../pages";
 import { Header } from "../../components";
 import { ThemeContext } from "../../ThemeContext";
 import useTheme from "../../useTheme";
+import Footer from "../Footer/Footer";
 
 const App = () => {
     const [theme, setTheme] = useTheme("blue", "Theme");
@@ -34,6 +35,7 @@ const App = () => {
                         <Route path='/theme' component={ChooseTheme} />
                         <Route path='/game' component={GamePage} />
                     </Switch>
+                    <Footer />
                 </ThemeContext.Provider>
             </div>
         </Router>

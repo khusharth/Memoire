@@ -7,5 +7,6 @@ import ThemeCard from "./ThemeCard/ThemeCard";
 import Card from "./Card/Card";
 import Board from "./Board/Board";
 import Rodal from "./Rodal/Rodal";
+import Footer from "./Footer/Footer";
 
-export { App, Header, Logo, Modal, Button, ThemeCard, Card, Board, Rodal };
+export { App, Header, Logo, Modal, Button, ThemeCard, Card, Board, Rodal, Footer };

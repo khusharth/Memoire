@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Logo1 from "../../assets/logo.png";
 import Logo2 from "../../assets/logo-2.png";
 import Logo3 from "../../assets/logo-3.png";
@@ -23,9 +24,11 @@ const Logo = ({ width }) => {
     }, [theme]);
 
     return (
-        <div className='header__logo'>
-            <img src={logo} alt='Logo' width={width} />
-        </div>
+        <Link to="/">
+            <div className='header__logo'>
+                <img src={logo} alt='Logo' width={width} />
+            </div>
+        </Link>
     );
 };
 

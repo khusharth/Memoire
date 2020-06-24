@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import blueCard from "../../assets/card.png";
 import greenCard from "../../assets/card-2.png"
 import brownCard from "../../assets/card-3.png"
+import { robot1, robot2, robot3, robot4, robot5, robot6, robot7, robot8 } from "../../assets/robots";
+import { pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6, pokemon7, pokemon8 } from "../../assets/pokemon";
+import { dog1, dog2, dog3, dog4, dog5, dog6, dog7, dog8 } from "../../assets/dogs";
 import { ThemeContext } from "../../ThemeContext";
 
 import "./Card.scss";
@@ -12,76 +15,76 @@ const getImage = (type) => {
 
     switch (type) {
         case "red":
-            image = "https://robohash.org/1.png";
+            image = robot1;
             break;
         case "yellow":
-            image = "https://robohash.org/2.png";
+            image = robot2;
             break;
         case "purple":
-            image = "https://robohash.org/3.png";
+            image = robot3;
             break;
         case "green":
-            image = "https://robohash.org/5.png";
+            image = robot4;
             break;
         case "grey":
-            image = "https://robohash.org/8.png";
+            image = robot5;
             break;
         case "pink":
-            image = "https://robohash.org/9.png";
+            image = robot6;
             break;
         case "brown":
-            image = "https://robohash.org/27.png";
+            image = robot7;
             break;
         case "blue":
-            image = "https://robohash.org/1004.png";
+            image = robot8;
             break;
         case "bulbasaur":
-            image = "https://pokeres.bastionbot.org/images/pokemon/1.png";
+            image = pokemon1;
             break;
         case "charizard":
-            image = "https://pokeres.bastionbot.org/images/pokemon/6.png";
+            image = pokemon2;
             break;
         case "squirtle":
-            image = "https://pokeres.bastionbot.org/images/pokemon/7.png";
+            image = pokemon3;
             break;
         case "butterfree":
-            image = "https://pokeres.bastionbot.org/images/pokemon/12.png";
+            image = pokemon4;
             break;
         case "psyduck":
-            image = "https://pokeres.bastionbot.org/images/pokemon/54.png";
+            image = pokemon5;
             break;
         case "pikachu":
-            image = "https://pokeres.bastionbot.org/images/pokemon/25.png";
+            image = pokemon6;
             break;
         case "jigglypuff":
-            image = "https://pokeres.bastionbot.org/images/pokemon/39.png";
+            image = pokemon7;
             break;
         case "meowth":
-            image = "https://pokeres.bastionbot.org/images/pokemon/52.png";
+            image = pokemon8;
             break;
         case "lhasa":
-            image = "https://images.dog.ceo/breeds/lhasa/n02098413_1137.jpg";
+            image = dog1;
             break;
         case "eskimo":
-            image = "https://images.dog.ceo/breeds/eskimo/n02109961_18552.jpg";
+            image = dog2;
             break;
         case "ridgeback":
-            image = "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_4459.jpg";
+            image = dog3;
             break;
         case "german":
-            image = "https://images.dog.ceo/breeds/pointer-germanlonghair/hans2.jpg";
+            image = dog4;
             break;
         case "mastiff":
-            image = "https://images.dog.ceo/breeds/mastiff-bull/n02108422_5143.jpg";
+            image = dog5;
             break;
         case "terrier":
-            image = "https://images.dog.ceo/breeds/terrier-silky/n02097658_10289.jpg";
+            image = dog6;
             break;
         case "bulldog":
-            image = "https://images.dog.ceo/breeds/bulldog-boston/n02096585_8203.jpg";
+            image = dog7;
             break;
         case "rottweiler":
-            image = "https://images.dog.ceo/breeds/rottweiler/n02106550_11203.jpg";
+            image = dog8;
             break;
         default:
             image = "";

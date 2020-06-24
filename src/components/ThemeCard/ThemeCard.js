@@ -1,4 +1,7 @@
 import React from "react";
+import { robot8 } from "../../assets/robots";
+import { pokemon6 } from "../../assets/pokemon";
+import { dog9 } from "../../assets/dogs";
 import "./themeCard.scss";
 
 const ThemeCard = ({ type, imageWidth, onClick, active }) => {
@@ -7,14 +10,13 @@ const ThemeCard = ({ type, imageWidth, onClick, active }) => {
     let bgColor = "";
 
     if (type === "Pokemon") {
-        image = "https://pokeres.bastionbot.org/images/pokemon/25.png";
+        image = pokemon6;
         bgColor = "green";
     } else if (type === "Dogs") {
-        image =
-            "https://images.dog.ceo/breeds/terrier-yorkshire/n02094433_3400.jpg";
+        image = dog9;
         bgColor = "brown";
     } else {
-        image = "https://robohash.org/1004.png";
+        image = robot8;
         bgColor = "blue";
     }
 
